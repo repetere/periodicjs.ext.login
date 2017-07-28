@@ -290,12 +290,11 @@ var forgot = function (req, res, next) {
   if (periodic.app.controller.extension.reactadmin) {
     if (err) {
       logger.debug('could not send reset email', err);
-    } else {
-      res.status(200).send({
-        result:'success',
-        data: 'Password reset instructions were sent to your email address',
-      });
     }
+    return res.status(200).send({
+      result:'success',
+      data: 'Password reset instructions were sent to your email address',
+    });
   } else { 
     CoreController.respondInKind({
       req: req,

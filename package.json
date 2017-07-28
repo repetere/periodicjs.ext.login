@@ -88,6 +88,10 @@
     {
       "name": "yawetse",
       "email": "yaw.etse@gmail.com"
+    },
+    {
+      "name": "markwaldron",
+      "email": "markewaldron@gmail.com"
     }
   ],
   "name": "periodicjs.ext.login",
@@ -102,5 +106,5 @@
     "postuninstall": "node uninstall.js",
     "test": "mocha"
   },
-  "version": "8.1.0"
+  "version": "8.1.1"
 }
