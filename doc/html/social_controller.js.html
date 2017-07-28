@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controller/social_controller.js</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Source: controller/social_controller.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>'use strict';
+
+var logger,
+	User,
+	passport,
+	loginExtSettings,
+	configError;
+
+
+/**
+ * logs user in via facebook oauth2
+ * @param  {object} req
+ * @param  {object} res
+ * @return {Function} next() callback
+ */
+var facebook = function (req, res, next) {
+	if (configError) {
+		next(configError);
+	}
+	else {
+		passport.authenticate('facebook', {
+			scope: loginExtSettings.passport.oauth.facebook.scope
+		})(req, res, next);
+	}
+};
+
+/**
+ * facebook oauth callback
+ * @param  {object} req
+ * @param  {object} res
+ * @return {Function} next() callback
+ */
+var facebookcallback = function (req, res, next) {
+	var loginUrl = (req.session.return_url) ? req.session.return_url : loginExtSettings.settings.authLoggedInHomepage;
+	var loginFailureUrl = (req.session.return_url) ? req.session.return_url : loginExtSettings.settings.authLoginPath + '?return_url=' + req.session.return_url;
+	passport.authenticate('facebook', {
+		successRedirect: loginUrl,
+		failureRedirect: loginFailureUrl,
+		failureFlash: 'Invalid facebook authentication credentials username or password.'
+	})(req, res, next);
+};
+/**
+ * logs user in via instagram oauth2
+ * @param  {object} req
+ * @param  {object} res
+ * @return {Function} next() callback
+ */
+var instagram = function (req, res, next) {
+	if (configError) {
+		next(configError);
+	}
+	else {
+		passport.authenticate('instagram', {
+			scope: loginExtSettings.passport.oauth.instagram.scope
+		})(req, res, next);
+	}
+};
+
+/**
+ * instagram oauth callback
+ * @param  {object} req
+ * @param  {object} res
+ * @return {Function} next() callback
+ */
+var instagramcallback = function (req, res, next) {
+	var loginUrl = (req.session.return_url) ? req.session.return_url : loginExtSettings.settings.authLoggedInHomepage;
+	var loginFailureUrl = (req.session.return_url) ? req.session.return_url : loginExtSettings.settings.authLoginPath + '?return_url=' + req.session.return_url;
+	passport.authenticate('instagram', {
+		successRedirect: loginUrl,
+		failureRedirect: loginFailureUrl,
+		failureFlash: 'Invalid instagram authentication credentials username or password.'
+	})(req, res, next);
+};
+/**
+ * logs user in via twitter oauth2
+ * @param  {object} req
+ * @param  {object} res
+ * @return {Function} next() callback
+ */
+var twitter = function (req, res, next) {
+	if (configError) {
+		next(configError);
+	}
+	else {
+		passport.authenticate('twitter', {
+			scope: loginExtSettings.passport.oauth.twitter.scope
+		})(req, res, next);
+	}
+};
+
+/**
+ * twitter oauth callback
+ * @param  {object} req
+ * @param  {object} res
+ * @return {Function} next() callback
+ */
+var twittercallback = function (req, res, next) {
+	var loginUrl = (req.session.return_url) ? req.session.return_url : loginExtSettings.settings.authLoggedInHomepage;
+	var loginFailureUrl = (req.session.return_url) ? req.session.return_url : loginExtSettings.settings.authLoginPath + '?return_url=' + req.session.return_url;
+	passport.authenticate('twitter', {
+		successRedirect: loginUrl,
+		failureRedirect: loginFailureUrl,
+		failureFlash: 'Invalid twitter authentication credentials username or password.'
+	})(req, res, next);
+};
+
+var passportSocialController = function (resources, passportResources) {
+	logger = resources.logger;
+	User = passportResources.User;
+	passport = passportResources.passport;
+	loginExtSettings = passportResources.loginExtSettings;
+	return {
+		facebook: facebook,
+		facebookcallback: facebookcallback,
+		instagram: instagram,
+		instagramcallback: instagramcallback,
+		twitter: twitter,
+		twittercallback: twittercallback,
+	};
+};
+
+module.exports = passportSocialController;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-authController.html">authController</a></li><li><a href="module-userloginController.html">userloginController</a></li><li><a href="login.html">login</a></li></ul><h3>Global</h3><ul><li><a href="global.html#facebook">facebook</a></li><li><a href="global.html#facebookcallback">facebookcallback</a></li><li><a href="global.html#instagram">instagram</a></li><li><a href="global.html#instagramcallback">instagramcallback</a></li><li><a href="global.html#saveUser">saveUser</a></li><li><a href="global.html#twitter">twitter</a></li><li><a href="global.html#twittercallback">twittercallback</a></li><li><a href="global.html#usePassport">usePassport</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Jan 29 2015 21:18:44 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

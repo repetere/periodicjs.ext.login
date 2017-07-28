@@ -1,0 +1,42 @@
+				</div> <!-- END OF <div id="ts-asyncadmin-content-container"> -->
+			</div>
+			<!-- END OF <div id="ts-asyncadmin-content-wrapper"> -->
+			<div class="ts-modal-hidden-container">
+			  <div class="ts-modal-overlay ts-bg-primary-color"></div>
+			</div>
+			<footer class="ts-position-fixed ts-position-bottom ts-width-100 ts-text-center ts-serif-clean ts-padding-md ts-bg-text-primary-color" style="border-top: 1px solid black;">
+				<section class="ts-page-content-container ">
+					<div class="ts-row ">
+					  <div class="ts-col-span6 ts-text-left ts-text-sm">
+					    <%- periodic.name %>
+					    <span class="ts-screenxs-hidden"> | 
+					    <a href="http://getperiodic.org" target="_blank">Periodic</a>
+					    </span>
+					  </div>
+					  <div class="ts-col-span6 ts-pull-right ts-text-right ts-text-sm">
+					    <span id="admin-console-span-container"></span>
+					    <span class="ts-screenxs-hidden">Version <%= periodic.version %>
+								<input type="hidden" name="periodic-version" value="<%= periodic.version %>"/> | 
+								Typesettin &copy;
+					    <%var d=new Date();%>
+					      <%- d.getFullYear() %> 
+					       </span>
+					      <span class=""><%- locals.appenvironment %></span>
+					  </div>
+					</div>
+				</section>
+				
+			</footer>
+		<!-- </div> -->
+	</main>
+	<% include _login_modal %>
+	<%- locals.viewhelper.getHTML(locals.additionalFooterHTML) %>
+	<script type="text/javascript">
+		window.use_session_timeout = true;
+		window.session_form_submit = true;
+    window.session_ttl = <% if(locals.session_ttl){%><%-locals.session_ttl%><%}else{%>false<%} %>;
+
+	  <%- locals.viewhelper.passObjToClient(periodic,"periodic") %>
+	</script>
+</body>
+</html>

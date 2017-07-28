@@ -1,0 +1,25 @@
+<header id="nav-header" class="ts-position-fixed ts-position-top ts-width-100 ts-z-index-1000 ts-bg-text-primary-color ts-serif-clean ts-row ts-padding-md minimize" style="border-bottom: 1px solid black;">
+	<div class="ts-container ">
+	  <div id="trigger" class="ts-float-left">
+	    <a href="#" id="trigger" class="ts-icon-menu-trigger">
+	      <span class="ts-button ts-button-primary-text-color flaticon-menu51" ></span>
+	    </a>
+	  </div>
+	  <div class="ts-pull-right ts-screenxs-hidden ts-screensm-hidden ts-screenmd-hidden">
+	  	<%
+	  	if(user){
+				var display_account_name = user.username || user.email;
+				var display_account_link = user.username || user._id;	%>
+	  	<a href="/<%-locals.adminPath%>/user/<%-display_account_link%>/edit" class="async-admin-ajax-link ts-button ts-button-primary-text-color  flaticon-user153"> <%- display_account_name %></a> 
+	  	<a href="/<%- adminPostRoute %>/logout" class="ts-button ts-button-primary-text-color  flaticon-logout20" title="logout"></a>
+	  	<%} 
+	  	else{%>
+	  	<a href="/<%- adminPostRoute %>/login" class="async-admin-ajax-link ts-button ts-button-primary-text-color  flaticon-login18 "> login</a>
+			<%}%>
+	  </div>
+	  <div id="menu-header-stylie" class="ts-text-md ts-text-left">
+	  	Login 
+	  	<%- pagedata.toplink %> 
+	  </div>
+	</div>
+</header>

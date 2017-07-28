@@ -1,0 +1,59 @@
+<% 
+var menu_signin = {
+  labelheading:false,
+  backlink:false,
+  label: 'Sign In', 
+  link: '/auth/login',
+  // linkclass:'async-admin-ajax-link'
+};
+
+var menu_register = {
+  labelheading:false,
+  backlink:false,
+  label: 'Register', 
+  link: '/auth/user/new',
+  // linkclass:'async-admin-ajax-link'
+};
+
+var globalNavLinks =[];
+  globalNavLinks.push(menu_signin);
+  globalNavLinks.push(menu_register);
+
+var heading = { 
+  labelheading:true,
+  label: 'Login', 
+  link: '/'+locals.adminPath,
+  linkclass:'async-admin-ajax-link',
+  links:globalNavLinks 
+} ;
+
+  var getNavHtml = function(nav){ %>
+<div class="ts-pushmenu-mp-level">
+  <%if(nav.labelheading == true){%>
+    <h4 class=""  ><a href="<%- nav.link.replace('%locals.adminPath%',locals.adminPath) %>" class=" linkclkass <%- nav.linkclass %>"><%- nav.label %></a></h4>
+  <%}%>
+  <% if(typeof nav !=='undefined' && nav.links && nav.links.length>0){%>
+  <%if(nav.backlink == true){%>
+          <a class="ts-pushmenu-mp-back" href="#color">Back</a>
+  <%}%>
+  <ul>
+    <%nav.links.forEach(function(navlinkobj,i){ %>
+      <li class="icon icon-arrow-left">
+        <a class=" linkclkass <%- navlinkobj.linkclass %>"
+          <% if(!navlinkobj.backlink){%> href="<%- navlinkobj.link.replace('%locals.adminPath%',locals.adminPath) %>"<%}%> >
+          <%- navlinkobj.label%>
+        </a>
+        <%if(navlinkobj.links){
+            getNavHtml(navlinkobj);
+          }%>
+        </li>
+        <%
+      })%>
+  </ul>
+  <%}%>
+</div>
+llllasdfs
+  <%};
+
+  getNavHtml(heading);
+ %>

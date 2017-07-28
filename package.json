@@ -1,0 +1,106 @@
+{
+  "authors": [
+    {
+      "email": "yaw.etse@gmail.com",
+      "name": "Yaw Joseph Etse",
+      "url": "http://about.me/yawjosephetse"
+    },
+    {
+      "email": "jan@promisefin.com",
+      "name": "Jan Bialostok",
+      "url": "https://github.com/janbialostok"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/typesettin/periodicjs.ext.login/issues"
+  },
+  "dependencies": {
+    "async": "^1.2.1",
+    "jsonwebtoken": "^5.0.2",
+    "moment": "^2.10.3",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.0.0",
+    "passport-google": "0.3.0",
+    "passport-instagram": "^0.1.2",
+    "passport-local": "1.0.0",
+    "passport-twitter": "^1.0.2",
+    "pushie": "^1.0.2",
+    "stylie.treeview": "^1.0.1",
+    "util-extend": ">=1.0.1"
+  },
+  "description": "An authentication extension for periodicjs that uses passport to authenticate user sessions.",
+  "devDependencies": {
+    "animate.css": "^3.5.1",
+    "browserify": "^13.0.1",
+    "chai": "^3.5.0",
+    "classie": "^1.0.0",
+    "formie": "^1.2.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jsbeautifier": "^0.2.12",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-newer": "^1.2.0",
+    "grunt-simple-mocha": "^0.4.1",
+    "jquery": "^3.0.0",
+    "js-dom": "0.0.1",
+    "jsdoc": "^3.4.0",
+    "mocha": "^2.5.3",
+    "stylie": "^2.0.1",
+    "stylie.modals": "^2.0.1",
+    "stylie.notifications": "^2.0.1",
+    "stylie.treeview": "^1.0.1",
+    "supertest": "^1.2.0",
+    "uglify-js": "^2.6.2",
+    "uglifyify": "^3.0.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "6f7a55cd6496189a7f372459784e927d3e64a4bb",
+    "tarball": "https://registry.npmjs.org/periodicjs.ext.login/-/periodicjs.ext.login-7.4.3.tgz"
+  },
+  "engines": {
+    "node": ">=6.x"
+  },
+  "gitHead": "4664b50397714fe9aad5c9b1e77d1707525c107c",
+  "homepage": "https://github.com/typesettin/periodicjs.ext.login",
+  "keywords": [
+    "authentication",
+    "cms",
+    "drupal",
+    "express",
+    "passport",
+    "periodicjs",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "janbialostok",
+      "email": "janbialostok@gmail.com"
+    },
+    {
+      "name": "yawetse",
+      "email": "yaw.etse@gmail.com"
+    }
+  ],
+  "name": "periodicjs.ext.login",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/typesettin/periodicjs.ext.login.git"
+  },
+  "scripts": {
+    "postinstall": "node install.js",
+    "postuninstall": "node uninstall.js",
+    "test": "mocha"
+  },
+  "version": "8.1.0"
+}

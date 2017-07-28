@@ -1,0 +1,28 @@
+<% include ../shared/header %>
+	<div class="ts-container">
+		<section class="ts-text-container">
+
+		<div class="ts-row">
+			<div class="ts-col-span8 ts-col-nofloat ts-screenmd-col-span12 ts-screensm-col-span12 ts-no-heading-margin ts-screenxs-col-span12">
+				<h2 class="text-left"><%= pagedata.title %></h2>
+				<div class="ts-padding-lg">
+					<% if(locals.isLoggedIn()){
+						%>
+							<div class="ts-text-center">
+								Already Logged In, <a href="/<%- adminPostRoute %>/logout">Log Out</a>
+							</div>
+						<%
+					} 
+					else{
+						%>
+							<form action="/<%- adminPostRoute %>/user/new" method="post" autocomplete="off" id="user_form" name="user_form" class="ts-form async-admin-ajax-forms">
+								<% include register_form %>
+							</form>
+						<%
+					} %>
+				</div>
+			</div>
+		</div>
+		</section>
+	</div>
+<% include ../shared/footer %>

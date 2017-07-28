@@ -1,0 +1,31 @@
+<div class="ts-row ts-form-row">
+	<input type="hidden" name="_csrf" value=<%= locals.token %> >
+	<label for="email" class="ts-label">email</label>
+	<div class="controls">
+		<input type="email" name="email" value="<%= user.email %>" disabled="disabled"/>
+	</div>
+</div>
+<div class="ts-row ts-form-row">
+	<label for="username" class="ts-label">username</label>
+	<div class="controls">
+		<input type="text" name="username" <% if(user.username){%>value="<%= user.username %>" disabled="disabled"<%}%> placeholder="username" />
+	</div>
+</div>
+
+
+<% if(request.query.required){
+	if(request.query.required==='activation'){%>
+		<div class="ts-row ts-form-row">
+			<label for="activation-token" class="ts-label">activation token 
+			<a href="/<%- adminPostRoute %>/user/activate">resend activation email</a></label>
+			<div class="controls">
+					<input type="text" name="activation-token" id="activation-token" value="<%- request.query.activation_token %>" placeholder="activation token" />
+			</div>
+		</div>
+	<%}%>
+<%}%>
+
+
+<div class="ts-text-center">
+	<button type="submit" name="submit" class="ts-button ts-text-lg ts-button-accent-color ts-screenxs-width-90 ts-screensm-width-90 ts-screenmd-width-50"><i class="icon-ok icon-white"></i> Register</button>
+</div>

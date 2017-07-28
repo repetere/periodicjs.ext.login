@@ -1,0 +1,221 @@
+@import (inline) "../../public/stylesheets/animate.min.css"; 
+@import "../../node_modules/stylie/resources/stylesheets/stylie.less";
+@import (inline) "../../public/img/adminui/flaticon.css"; 
+@import "periodic_stylie.less";
+@import "../../node_modules/stylie.modals/resources/stylesheets/stylie.modals.less";
+@import "../../node_modules/stylie.notifications/resources/stylesheets/stylie.notifications.less";
+// // @import "../../node_modules/platterjs/client/stylesheets/platter.less";
+@import "../../node_modules/stylie.treeview/resources/stylesheets/stylie.treeview.less";
+ body, 
+  .ts .ts-serif-clean,
+  .ts h1, .ts h2, .ts h3, .ts h4, .ts h5, .ts h6,
+  .ts summary,
+  .ts details {
+font-family: Arial, Helvetica, sans-serif!important;
+	font-family: @sanserif!important;
+
+   }
+.animated-fast {
+  -webkit-animation-duration: .250s;
+  animation-duration: .250s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated-medium {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.ts .ts-nav-image {
+    height: 2.75rem;
+    padding: 0.75rem;
+    top: 0.5rem;
+    position: relative;
+}
+.ts-tabs nav li.ts-tab-current:before, 
+.ts-tabs nav li.ts-tab-current:after {
+  background: @dividerColor;
+}
+.ts .ts-button{
+			margin-bottom:.25em;
+		}
+.ts{
+	.ts-tabs-content{
+		&.ts-tab-border{
+			aside{
+			  border-width: 1px;
+			  border-style: solid;
+			  border-top: none;
+			}
+		}
+	}
+	.ts-modal{
+		width:auto;
+		max-width:90%;
+	}
+	body{
+		nav#ts-nav-menu{
+			position: fixed;
+			top: 0;
+			height: 100%;
+			z-index: 200;
+			width: auto;
+			margin-top: @sizexl;
+			padding: @sizelg;
+			padding-bottom: @sizexx;
+			background: @textPrimaryColor;
+			min-width: (@sizexx *3);
+			overflow: auto;
+			overflow-x: hidden;
+			// .ts-shadow;
+			border-right: 1px solid @primaryTextColor;
+			&.initialState{
+				display: none;
+			}
+		}
+		.ts-nav-overlay{
+			position: fixed;
+			top:0;
+			height:100%;
+			width:100%;
+			background-color: rgba(255, 255, 255, 0.8);
+			text-align: center;
+			vertical-align: middle;
+	 		transition: all .3s ease-in-out;
+	 		opacity: 1;
+	 		z-index:190;
+	 		&.hide{
+	 			opacity: 0;
+	 			display: none;
+	 		}
+	 	}
+	 	.ts-medialist-cb{
+	 		section{
+	 			display:block;
+	 			overflow: auto;
+	 		}
+	 	}
+		#ts-asyncadmin-content-container{
+			margin-top: @sizexx;
+		}
+		.ts-genericdoc-entry{
+			padding-right:(@sizexl/2);
+		}
+		.ts-genericdoc{
+    	outline: none;
+    	&:focus{
+    		outline: none;
+    	}
+			summary{
+				outline: none;
+				&:focus{
+					outline: none;
+				}
+				margin-bottom: 0;
+			}
+			hr{
+				margin-bottom: 0;
+				border-bottom-color: lighten(@dividerColor, 20%)
+			}
+			aside{
+				background-color:lighten(@secondaryColor, 10%);
+				padding:@sizemd;
+			}
+			.ts-form-row{
+				padding: 0;
+			}
+    }
+    .ts-icon{
+    	height: @sizelg;
+    	margin: @sizexs;
+    }
+    .ts-genericdoc-hoveroptions{
+    	transition: opacity .1s ease-in-out;
+    	opacity: 0;
+    	&.show-hoveroptions{
+    		opacity: 1;
+    	}
+    }
+    details:hover,
+    details[open]{
+	    .ts-genericdoc-hoveroptions{
+	    	opacity: 1;
+	    }
+    }
+    .generic-content{
+    	min-height: 15em;
+    }
+	}
+	#ts-admin-console-content{
+		pre{
+			margin: 0;
+		  margin-left: .5em;
+			&.ts-sans-serif{
+				.ts-sans-serif;
+			}
+		}
+	}
+	#_pltr-ecmc{
+		display:none;
+	}
+	#_pltrContainer{
+		background: none;
+		&._pltr-bottom{
+			// bottom:1em;
+		}
+		._pltr-tab{
+			height:3em;
+			.ts-text-text-primary-color; 
+			.ts-bg-accent-color;
+			border:none;
+			font-size:@percentsm;
+			float:right;
+			display: inline;
+			color:@accentColor;
+			cursor: pointer;
+			&._pltr-item{
+				display: inline;
+			}
+		}
+	}
+	#adminConsole_pltr{
+		display: inline;
+	}
+	#_pltr-elementsContainer{
+		height:100%;
+		#adminConsole_pltr-pane-wrapper{
+			min-height:100%;
+			padding-top:@sizexl;
+			overflow:auto;
+			.ts-text-text-primary-color; 
+			.ts-bg-primary-text-color;
+		}
+		#adminConsole_pltr-pane{
+			.ts-text-text-primary-color; 
+			.ts-bg-primary-text-color;
+
+		}
+	}
+
+	._pltr-tab{
+		&._pltr-item{
+			display: inline;
+			color:@accentColor;
+			cursor: pointer;
+		}
+	}
+	footer{
+		z-index: 210;
+	}
+	#ts-asyncadmin-content-wrapper{
+		margin-bottom: @sizexx;
+	}
+}
+
+#adminConsole_pltr-pane{
+	background: @primaryTextColor;
+	color: @textPrimaryColor;
+	font-size:14px;
+	min-height: 100%;
+}

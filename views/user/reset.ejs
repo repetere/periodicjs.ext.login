@@ -1,0 +1,28 @@
+<% include ../shared/header %>
+<div class="ts-container">
+  <div class="ts-row">
+    <div class="ts-col-span8 ts-col-nofloat ts-screenmd-col-span12 ts-screensm-col-span12 ts-no-heading-margin ts-screenxs-col-span12">
+      <h2 class="text-left"><%= pagedata.title %> <%=pagedata.current_user.email %></h2>
+
+      <form action="/<%- adminPostRoute %>/reset/<%- request.params.token %>" 
+      method="post" autocomplete="off" id="reset_form" 
+        name="reset_form" class="ts-form">
+        <input type="hidden" name="_csrf" value=<%= locals.token %> >
+        <div class="ts-row ts-form-row">
+          <label class="ts-label">Password</label>
+          <input type="password" name="password" placeholder="password"  class="ts-col-span12"/>
+        </div>
+        <div class="ts-row ts-form-row" style="margin-bottom:1.5em">
+          <label class="ts-label">Confirm password</label>
+          <input type="password" title="confirm your password" name="passwordconfirm" 
+          placeholder="confirm password" class="ts-col-span12" />
+        </div>
+        <div class="ts-text-center">
+          <button type="submit" name="submit" class="ts-button ts-text-lg ts-button-accent-color ts-screenxs-width-90 ts-screensm-width-90 ts-screenmd-width-50 ">
+            <i class="icon-ok icon-white"></i> Reset</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<% include ../shared/footer %>

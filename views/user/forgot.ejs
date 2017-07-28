@@ -1,0 +1,21 @@
+<% include ../shared/header %>
+<div class="ts-container">
+  <div class="ts-row">
+    <div class="ts-col-span8 ts-col-nofloat ts-screenmd-col-span12 ts-screensm-col-span12 ts-no-heading-margin ts-screenxs-col-span12">
+      <h2 class="text-left"><%= pagedata.title %></h2>
+
+      <form action="/<%- adminPostRoute %>/forgot" method="post" autocomplete="off" id="forgot_form" name="forgot_form" class="ts-form">
+        <input type="hidden" name="_csrf" value=<%= locals.token %> >
+        <div class="ts-row ts-form-row">
+          <label class="ts-label"> Email </label>
+          <input type="text" name="email" class="ts-col-span12" placeholder="email@domain.com" />
+        </div>
+        <div class="ts-row ts-form-row ts-text-center">
+          <button type="submit" name="submit" class="ts-button ts-text-lg ts-button-accent-color ts-screenxs-width-90 ts-screensm-width-90 ts-screenmd-width-50">
+          <i class="icon-ok icon-white"></i> Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% include ../shared/footer %>

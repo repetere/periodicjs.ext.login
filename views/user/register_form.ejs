@@ -1,0 +1,32 @@
+<input type="hidden" name="_csrf" value="<%= locals.token %>" >
+
+<div class="ts-row ts-form-row">
+	<label class="ts-label">Email</label>
+	<input type="email" name="email" placeholder="Your email address"  class="ts-col-span12"/>
+</div>
+<div class="ts-row ts-form-row">
+	<label class="ts-label">Username</label>
+	<input type="text" name="username" placeholder="username"  class="ts-col-span12" />
+</div>
+<div class="ts-row ts-form-row">
+	<label class="ts-label">Password</label>
+	<input type="password" name="password" placeholder="password"  class="ts-col-span12"/>
+</div>
+<div class="ts-row ts-form-row" style="margin-bottom:1.5em">
+	<label class="ts-label">Confirm password</label>
+	<input type="password" title="confirm your password" name="passwordconfirm" placeholder="confirm password" class="ts-col-span12" />
+</div>
+<div class="ts-text-center ts-text-sm">
+	<button type="submit" name="submit" class="ts-button ts-text-lg ts-button-accent-color ts-screenxs-width-90 ts-screensm-width-90 ts-screenmd-width-50"><i class="icon-ok icon-white"></i> Register</button>
+	<hr>
+	<% if(locals.login_social_buttons.facebook){%>
+		<a href="/<%- adminPostRoute %>/facebook" class="ts-button">Facebook login</a>
+	<%}%>
+	<% if(locals.login_social_buttons.twitter){%>
+		<a href="/<%- adminPostRoute %>/twitter" class="ts-button">twitter login</a>
+	<%}%>
+	<% if(locals.login_social_buttons.instagram){%>
+		<a href="/<%- adminPostRoute %>/instagram" class="ts-button">instagram login</a>
+	<%}%>
+	<a href="/<%- adminPostRoute %>/login" class="ts-button ts-button-primary-text-color">Log in</a>
+</div>

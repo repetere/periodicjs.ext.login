@@ -1,0 +1,28 @@
+<% include ../shared/header %>
+<div class="ts-container">
+	<section class="ts-text-container">
+		<div class="ts-row">
+			<div class="ts-col-span8 ts-col-nofloat ts-screenmd-col-span12 ts-screensm-col-span12 ts-no-heading-margin ts-screenxs-col-span12">
+				<h2 class="text-left">Sign In</h2>
+				<%if(adminPostRoute!=='auth'){%><hr><%}%>
+				<div class="ts-padding-lg">
+					<% if(locals.isLoggedIn()){
+						%>
+							<div class="ts-text-center">
+								Already Logged In, <a href="/<%- adminPostRoute %>/logout">Log Out</a>
+							</div>
+						<%
+					} 
+					else{
+						%>
+							<form action="/<%- adminPostRoute %>/login" method="post" autocomplete="off" id="login_form" name="login_form" data-donotnotify="do-not-notify" class="ts-form async-admin-ajax-forms">
+								<% include login_form %>
+							</form>
+						<%
+					} %>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<% include ../shared/footer %>

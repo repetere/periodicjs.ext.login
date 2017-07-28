@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path d="M54.027,5.78l21.059,59.962l-46.815,16.44L7.214,22.219L54.027,5.78 M55.864,1.955l-2.831,0.994L6.22,19.388L3.39,20.382     l0.994,2.831L25.44,83.177l0.994,2.83l2.831-0.994l46.815-16.44l2.83-0.993l-0.994-2.831L56.857,4.786L55.864,1.955L55.864,1.955     z"/>
+		</g>
+		<g>
+			<g>
+				
+					<rect x="57.01" y="24.032" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 71.5324 120.0643)" width="7.247" height="42.369"/>
+			</g>
+			<g>
+				<polygon points="41.149,64.896 47.281,63.565 42.482,58.767     "/>
+			</g>
+			<g>
+				<path d="M82.658,28.215c0.398-0.875-0.154-2.39-1.395-3.629c-1.24-1.24-2.752-1.793-3.627-1.394l-0.053-0.051l-3.35,3.351      l5.125,5.124l3.35-3.351L82.658,28.215z"/>
+			</g>
+		</g>
+	</g>
+	<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="14.876" y1="29.056" x2="51.854" y2="15.506"/>
+	<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="17.638" y1="35.831" x2="54.615" y2="22.281"/>
+	<line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="20.4" y1="42.605" x2="43.037" y2="34.212"/>
+</g>
+</svg>

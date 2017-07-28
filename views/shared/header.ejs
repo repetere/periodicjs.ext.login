@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ts ts-height-100">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	<title><%- pagedata.title %> - <%- periodic.name %></title>
+	<meta name="author" content="Yaw Joseph Etse" />
+	<meta name="description" content="<%- periodic.name %> Login." />
+	<meta name="keywords"  content="<%- periodic.name %>, auth, login" />
+	<meta name="Resource-type" content="Document" />
+	<!-- <link rel="stylesheet" type="text/css" href="/stylesheets/default/periodic.css" /> -->
+	<link rel="stylesheet" type="text/css" href="<%= locals.themehelper.extensionPublicResourcePath('periodicjs.ext.login','stylesheets') %>login.css" />
+	<script type="text/javascript">
+		<%- locals.viewhelper.passObjToClient(flash_messages,"periodic_flash_messages") %>
+	</script>
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<script type="text/javascript" src="<%= locals.themehelper.extensionPublicResourcePath('periodicjs.ext.login','js') %>login.min.js"></script>
+	<% var headertags = locals.viewhelper.includeJavaScripts(pagedata.headerjs); %><%- headertags %>
+	<%- locals.viewhelper.getHTML(locals.additionalHeadHTML) %>
+</head>
+<body class="ts-body ts-height-100 ts-no-x-overflow">
+  <div id="ts-main-div" class=" ">
+  	<nav id="ts-nav-menu" class="ts-text-sm animated-fast initialState ts-nav-menu">
+		  <% include _treeview_nav %>
+		</nav>
+		<div class="ts-nav-overlay hide"></div>
+    <main id="ts-main-content">
+      <!-- <div class="ts-pushmenu-scroller-inner ts-height-100 "> -->
+      <% include _header_menu_title %>
+      <div id="ts-preloading" class="ts-preloading hide hide-preloading"></div>
+      <div id="ts-asyncadmin-content-wrapper">
+        <div id="ts-asyncadmin-content-container">
